@@ -1,7 +1,7 @@
-import React from "react";
-import {AiFillHome} from "react-icons/ai";
+import React, {useState} from "react";
+// import {AiFillHome} from "react-icons/ai";
 import {MdOutlineSubscriptions, MdOutlineVideoLibrary, MdPodcasts, MdOutlineFeedback} from "react-icons/md"
-import {GoHistory, GoVideo} from "react-icons/go"
+import {GoHistory, GoVideo, GoHomeFill} from "react-icons/go"
 import {IoMdTime} from "react-icons/io"
 import {BiLike} from "react-icons/bi"
 import {PiFireLight, PiMusicNoteLight} from "react-icons/pi"
@@ -13,21 +13,27 @@ import {IoSettingsOutline} from "react-icons/io5"
 import {RiFlagLine} from "react-icons/ri"
 import {TfiHelpAlt} from "react-icons/tfi"
 // import store from "../utilis/store"
-import {useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {useSelector } from "react-redux";
+import Iconsidebar from "./Iconsidebar"
 
 
 
 const Sidebar = () => {
+
+  // const [tinyMenu, setTinyMenu] =  useState("false")
 const isMenuOpen = useSelector((store) => store.app.isMenuOpen );
 
-  if(!isMenuOpen) return null;
-
+  if(!isMenuOpen ) 
+  return <Iconsidebar/> 
+  // above is the early return with if condition, we can return something without using return keyword, like using ternary operator/condition 
+//if above if condition true(no sidebar menu) then it return small icons menu or else it return below sidebar
+// this toggle function enabled at head.js hamburger menu icon with help of redux store
   return (
-    <div className="w-52 h-screen fixed overflow-x-hidden overflow-y-hidden hover:overflow-y-scroll  p-2 mt-14 shadow-lg">
+    <div className={`w-52 h-screen ${isMenuOpen? "fixed" :"left-28"}  overflow-x-hidden overflow-y-hidden hover:overflow-y-scroll z-10  p-2 pt-0 mt-14`}>
       <div className="font-normal pb-5">
-        <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><AiFillHome /></span><Link to='/'><h1 className="text-sm">Home</h1></Link></div>
-        <div className="flex items-center p-1 cursor-pointer hover:bg-gray-200 rounded-lg"><svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style={{pointerEvents: "none",paddingLeft:"4px" ,marginRight:"20px", display: "block", width: "28px", height: "28px"}}><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z"></path></svg> <h1 className="text-sm">Shorts</h1></div>
+        <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><GoHomeFill/></span><Link to='/'><h1 className="text-sm">Home</h1></Link></div>
+        <div className="flex items-center p-1 cursor-pointer hover:bg-gray-200 rounded-lg"><svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style={{pointerEvents: "none",paddingLeft:"6px" ,marginRight:"22px", display: "block", width: "28px", height: "28px"}}><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z"></path></svg> <h1 className="text-sm">Shorts</h1></div>
         <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><MdOutlineSubscriptions /></span> <h1 className="text-sm">Subscriptions</h1></div>
       </div>
       <div className="pb-5"><hr /></div>

@@ -5,11 +5,11 @@ import { Outlet } from 'react-router-dom'
 
 const Body = () => {
   return (
-    <div className='grid grid-flow-col '>
-      <div className='col-span-2 relative '>
+    <div className='grid grid-flow-col relative'>
+      <div className='col-span-2 '>
         <Sidebar/>
       </div>
-      <div className='col-span-10 relative w-full'>
+      <div className='col-span-10 relative'>
         <Outlet />
       </div> 
     </div>

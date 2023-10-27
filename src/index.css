@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Add this CSS to your global styles or a CSS file */
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* You can use your desired color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* You can use your desired color */
+  border-radius: 4px;
+  height: 58px;
+
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* You can use your desired color */
+}

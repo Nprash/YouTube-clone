@@ -5,7 +5,7 @@ import Button from '../components/Button';
 const list = ["All", "Mixes","Music","Arjitsingh","Live","News","Filmi","Mantras","Flute","Movie Musicals","Healing Prayers"]
 const ButtonList = () => {
   return (
-    <div className='flex w-full'>
+    <div className='flex w-full mb-0'>
       {
         list.map((btnlist)=>{
           return (
