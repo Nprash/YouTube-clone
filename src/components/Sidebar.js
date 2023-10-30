@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect } from "react";
 // import {AiFillHome} from "react-icons/ai";
 import {MdOutlineSubscriptions, MdOutlineVideoLibrary, MdPodcasts, MdOutlineFeedback} from "react-icons/md"
 import {GoHistory, GoVideo, GoHomeFill} from "react-icons/go"
@@ -24,6 +24,10 @@ const Sidebar = () => {
   // const [tinyMenu, setTinyMenu] =  useState("false")
 const isMenuOpen = useSelector((store) => store.app.isMenuOpen );
 
+  // useEffect(()=>{
+  //   return <Iconsidebar/>
+
+  // },[!isMenuOpen])
   if(!isMenuOpen ) 
   return <Iconsidebar/> 
   // above is the early return with if condition, we can return something without using return keyword, like using ternary operator/condition 
@@ -128,10 +132,12 @@ const isMenuOpen = useSelector((store) => store.app.isMenuOpen );
         <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><MdOutlineFeedback /></span><h1 className="text-sm">Send feedback</h1></div>
       </div>
       <div className="p-5"><hr /></div>
-      <div className="font-normal break-words"><p className="pb-5 text-sm">About Press Copyright Contact us Creators Advertise Developers</p>
-          <p className="pb-5 text-sm">TermsPrivacyPolicy & SafetyHow YouTube worksTest new features</p>
-            <p className="text-sm">© 2023 Google LLC</p>
-  </div>
+      <div className="pl-5 pr-3 font-normal break-words h-fit mb-4">
+        <p className="text-[11px] pb-2 h-fit">About Press Copyright Contact us Creators Advertise Developers</p>
+        <p className=" text-[11px] pb-2 h-fit">Terms Privacy Policy & Safety How YouTube works Test new features</p>
+        <p className="text-[11px] pb-2 h-fit ">© 2023 Google LLC</p>
+      </div>
+      <div className="h-12"></div>
     </div>
   );
 };
