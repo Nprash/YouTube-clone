@@ -12,7 +12,7 @@ const isMenuOpen = useSelector((store) => store.app.isMenuOpen );
       <div className={`w-full overflow-x-hidden bg-gray-50 fixed z-0`}>
         <ButtonList />
       </div>
-      <div className={` mt-0 overflow-x-hidden`}>
+      <div className={` mt-12   w-fit`}>
         <VideoContainer/>
       </div>
     </div>

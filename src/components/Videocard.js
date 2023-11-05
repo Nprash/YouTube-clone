@@ -25,7 +25,7 @@ const Videocard = ({info}) =>{
     }
 
     return(
-        <div className="w-[17rem] p-2 cursor-pointer box-border">
+        <div className="w-[17rem] pr-2 cursor-pointer box-border">
             <div className="rounded-lg w-70">
                 <img src={thumbnails?.medium?.url} className="w-full rounded-lg" alt="video-img" />
             </div>

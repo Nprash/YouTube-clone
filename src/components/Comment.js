@@ -1,5 +1,6 @@
 import React from 'react'
 import CommentsAction from './CommentsAction'
+import usericon from "../Assets/user-icon.png"
 
 const Comment = ({data}) => {
     const {name, text} = data
@@ -7,7 +8,7 @@ const Comment = ({data}) => {
   <>
     <div className='w-fit flex items-start shadow-sm p-2 m-2 bg-yellow-50 rounded-lg'>
         <div className='h-9 '>
-            <img className='w-8 cursor-pointer h-8 ' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ66Z_VbQdf8hb5Hr7gAwBpY_B2T7mBFH5qwg&usqp=CAU" alt="user-icon" />
+            <img className='w-8 cursor-pointer h-8 ' src={usericon} alt="user-icon" />
         </div>
         <div className='px-3'>
             <p>{name}</p>

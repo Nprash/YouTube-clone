@@ -19,7 +19,7 @@ const [videos, setVideos] = useState([]);
   // console.log(videos[0]);
 
   return (
-    <div className={` w-full flex flex-wrap  pt-10 ` }>
+    <div className={` w-full flex flex-wrap mt-12 pt-10 ` }>
       {
         videos.map(video =><Link to={"/watch?v="+video.id} key={video.id} ><Videocard info={video}/></Link>)
         }
