@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { closeMenu, iconMenu } from "../utilis/appSlice";
 import { useSearchParams } from "react-router-dom";
 // import { useSelector } from "react-redux";
+import CommentsContainer from "../components/CommentsContainer"; 
 
 
 const WatchPage = () => {
@@ -24,10 +25,12 @@ const WatchPage = () => {
 //   if(!isMenuOpen ) 
 //   return null;
     return(
-        <div className="absolute mt-14">
-            <iframe width="560" height="315" 
-            src={"https://www.youtube-nocookie.com/embed/"+searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>    
-            
+        <div>
+        <div className=" mt-14">
+            <iframe width="1300" height="750" src={"https://www.youtube-nocookie.com/embed/"+searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+            </iframe>    
+        </div>
+        <CommentsContainer/>
         </div>
     )
 }

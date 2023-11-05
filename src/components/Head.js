@@ -57,7 +57,7 @@ const Head = () => {
     //above console refers that how many API calls are happening accroding to search query
         // this function called inside the timer in useeffect ot make an API call with the search query
         dispatch(cacheResults({
-            iphone:[1,2,3]
+            [searchQuery]:json[1], 
         }))
     };
 

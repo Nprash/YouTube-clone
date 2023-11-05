@@ -2,11 +2,9 @@ import React, {useEffect, useState} from 'react'
 import Videocard from './Videocard'
 import { Youtube_API } from '../utilis/Constants';
 import {Link} from "react-router-dom";
-import {useSelector } from "react-redux";
 
 
 const VideoContainer = () => {
-const tinyMenu = useSelector((store)=> store.app.istinyMenuOpen)
 
 const [videos, setVideos] = useState([]);
   useEffect(()=>{
