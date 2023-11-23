@@ -12,9 +12,9 @@ const ButtonList = () => {
 
 
   return (
-    <div className='  mb-0'>
+    <div className='p-0  m-0'>
       
-      <div className='   flex m-2' ref={containerRef} >
+      <div className=' w-screen  flex m-1 overflow-x-hidden hover:overflow-x-scroll ' ref={containerRef} >
         <button className=' left-0 p-2'><LiaAngleLeftSolid /></button>
         {
           list.map((btnlist)=>{
@@ -24,7 +24,7 @@ const ButtonList = () => {
               
             })
           }
-          <button className='absolute right-0 p-2'><LiaAngleRightSolid /></button>
+          <button className='right-0  p-2 '><LiaAngleRightSolid /></button>
       </div>
       
 

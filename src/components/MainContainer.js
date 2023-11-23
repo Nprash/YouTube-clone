@@ -8,11 +8,11 @@ const MainContainer = () => {
 const isMenuOpen = useSelector((store) => store.app.isMenuOpen );
 
   return (
-    <div className={`${isMenuOpen? "absolute": ""} mt-12 `}>
-      <div className={`w-full overflow-x-hidden bg-gray-50 fixed z-0`}>
+    <div className={`w-full mt-12 box-border`}>
+      <div className={`w-full box-border  bg-gray-50 fixed z-1`}>
         <ButtonList />
       </div>
-      <div className={` mt-12   w-fit`}>
+      <div className={` absolute w-full sm:w-fit mx-auto mt-14 box-border -z-10`}>
         <VideoContainer/>
       </div>
     </div>

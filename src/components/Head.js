@@ -8,6 +8,8 @@ import Youtubelogo from "../Assets/Youtube-logo-icon.png";
 import { useDispatch ,useSelector } from 'react-redux'
 import { cacheResults } from '../utilis/searchSlice'
 import usericon from "../Assets/user-icon.png"
+// import {discoverVideos} from "../components/VideoContainer"
+import useVideosList from './useVideosList'
 
 const Head = () => {
 
@@ -36,7 +38,7 @@ const Head = () => {
 
     useEffect(()=>{
      const timer =    setTimeout( () => {
-        if(searchCache[searchQuery]){ //if searchquer is present in cache then setsuggestions is same or dont make api call
+        if(searchCache[searchQuery]){ //if searchquery is present in cache then setsuggestions is same or dont make api call
             setCatchsuggestions(searchCache[searchQuery])
         }
         else{
@@ -47,10 +49,11 @@ const Head = () => {
             // catchsuggestions;
             clearTimeout(timer);
         }
-    },[searchQuery])
+    },[searchQuery]);
 
     const getSearchSuggestions = async() =>{ 
         const data = await fetch(Youtube_Suggestion_API+searchQuery)
+        // console.log(data)
         const json = await data.json();
         // console.log(json[1])
         setCatchsuggestions(json[1]);
@@ -60,7 +63,9 @@ const Head = () => {
         dispatch(cacheResults({
             [searchQuery]:json[1], 
         }))
+        // Call the onSearchQueryChange function passed from the parent component
     };
+    // onSearchQueryChange(searchQuery);
 
 // when I clicked
 // render the component
@@ -76,6 +81,8 @@ const Head = () => {
         dispatch(toggleMenu())
     };
 
+    // const fixedListofVideos = useVideosList({searchQuery})
+    // discoverVideos(e.target.value,fixedListofVideos);
      
 
   return (
@@ -89,21 +96,23 @@ const Head = () => {
             
             <div className='w-3/5 flex justify-center relative'>
                 <div className='w-full flex justify-start relative'>
-                <input type="text" placeholder="Search" valsue={searchQuery}  onChange={(e)=>setSearchQuery(e.target.value)} onFocus={()=>setShowsuggestions(true)} onBlur={()=>setShowsuggestions(false)} className='w-full text-base border border-gray-300 px-4 rounded-l-full'/>
+                    <input type="text" placeholder="Search" value={searchQuery}  onChange={(e)=>{setSearchQuery(e.target.value);}} onFocus={()=>setShowsuggestions(true)} onBlur={()=>setShowsuggestions(true)} className='w-full text-base border border-gray-300 px-4 focus:outline-none rounded-l-full'/>
+                    {showSuggestions && (<div className={` w-full border rounded-lg p-2 absolute z-50 bg-white mt-8 ${!searchQuery && "hidden"}`}>
+                    <ul >
+                        {catchsuggestions.map((e, index)=> <li key={index} className="  p-2  hover:bg-gray-100  hover:rounded-lg">{e}</li>
+                        )}      
+                    </ul>
+                    </div>)}
                 </div>
                 
             <button className="px-6 mr-4 py-2 flex justify-center items-center bg-gray-100 text-xl border border-gray-300 rounded-r-full"><GoSearch /> </button>
             <span className='text-xl border border-gray-100 bg-gray-100 rounded-full w-12 flex justify-center items-center cursor-pointer'><IoMdMic/></span>
             </div>
             
-            {showSuggestions && (<div className='w-3/5 absolute z-50 mt-8  '>
-                <ul >
-                {catchsuggestions.map(e => <li className="w-4/5 bg-white py-2 pl-3 ml-2 hover:bg-gray-100  border-gray-300">{e}</li>
-                )}      
-                </ul>
-            </div>)}
+            
             
         </div>
+        
  
         
         <div className='col-span-1 flex justify-around items-center pr-3'>

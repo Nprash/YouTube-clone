@@ -25,9 +25,11 @@ const Videocard = ({info}) =>{
     }
 
     return(
-        <div className="w-[17rem] pr-2 cursor-pointer box-border">
+        <div className="w-[17rem] p-2 cursor-pointer box-border ">
             <div className="rounded-lg w-70">
                 <img src={thumbnails?.medium?.url} className="w-full rounded-lg" alt="video-img" />
+                {/* <iframe className="rounded-lg" width="320" height="180" src={"https://www.youtube-nocookie.com/embed/"+searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+            </iframe>  */}
             </div>
             <div className="w-full h-[6.5rem] flex pt-2 box-border">
                 {/* <div className="w-10 pt-2 pr-2"> */}

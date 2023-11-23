@@ -85,7 +85,7 @@ const CommentsList = ({maincomments}) =>{
 //above is recursion for mapping subcomments/replies to the main comments
 const CommentsContainer = () => {
   return (
-    <div className='p-2 m-2 bg-pink-50 rounded-lg'>
+    <div className='w-full p-2 m-2 bg-pink-50 rounded-lg'>
       <h1 className='text-2xl font-bold'> Comments:</h1>
       <CommentsList maincomments={commentsData}/>
     </div>
