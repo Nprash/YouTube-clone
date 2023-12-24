@@ -25,8 +25,8 @@ const Videocard = ({info}) =>{
     }
 
     return(
-        <div className="w-[17rem] p-2 cursor-pointer box-border ">
-            <div className="rounded-lg w-70">
+        <div className="w-[200px] sm:w-[220px] lg:w-[17rem] p-2 cursor-pointer box-border shadow-md m-1">
+            <div className="rounded-lg ">
                 <img src={thumbnails?.medium?.url} className="w-full rounded-lg" alt="video-img" />
                 {/* <iframe className="rounded-lg" width="320" height="180" src={"https://www.youtube-nocookie.com/embed/"+searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
             </iframe>  */}
@@ -35,10 +35,10 @@ const Videocard = ({info}) =>{
                 {/* <div className="w-10 pt-2 pr-2"> */}
                     <img src={channelimage} className="w-9 h-9 rounded-full" alt="channel logo" />
                 {/* </div> */}
-                <div className="w-full h-24 pl-2">
-                    <p className="m-0 h-11 text-base overflow-hidden box-border break-words"><span className=" line-clamp-2 leading-5 ">{title}</span></p>
-                    <p className="text-sm w-fit">{channelTitle}</p>
-                    <p className="text-sm w-fit"><span>{FormateCountview(statistics?.viewCount)} views</span> <span>{FormatdaysAgo(publishedAt)}</span></p>
+                <div className="w-full md:h-24 pl-2">
+                    <p className="m-0 pb-3  overflow-hidden box-border break-words"><span className=" line-clamp-2 leading-5 text-[15px] sm:text-sm">{title}</span></p>
+                    <p className="font-semibold  text-[14px] md:text-[15px] sm:text-xs w-fit">{channelTitle}</p>
+                    <p className="text-[14px] md:text-[15px] sm:text-xs w-fit "><span>{FormateCountview(statistics?.viewCount)} views</span> <span>{FormatdaysAgo(publishedAt)}</span></p>
                     
                 </div>
             </div>

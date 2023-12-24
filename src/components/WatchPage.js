@@ -29,9 +29,9 @@ const WatchPage = () => {
     return(
         <div className="w-fit flex flex-col box-border ">
             {/* {isLocation.pathname.includes('/Watch') && <Iconsidebar />} */}
-            <div className=" mt-14 px-5 flex rounded-lg">
+            <div className="w-fit mt-14 px-5 flex rounded-lg">
                 <div>
-                    <iframe className="rounded-lg" width="750" height="550" src={"https://www.youtube-nocookie.com/embed/"+searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>    
+                    <iframe className="rounded-lg" width="1050" height="550" src={"https://www.youtube-nocookie.com/embed/"+searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>    
                 </div>
                 <div className="w-full">
                     <LiveChat/>

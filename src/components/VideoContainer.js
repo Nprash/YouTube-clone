@@ -10,7 +10,7 @@ const VideoContainer = () => {
   const videos = useVideosList();
 // const discoverVideos = discoverVideos()
   return (
-    <div className={`w-full flex flex-wrap box-border lg:justify-center md:justify-around sm:w-fit ` }>
+    <div className={` sm:w-fit flex flex-wrap box-border justify-center items-center lg:justify-around md:justify-around sm:justify-center ` }>
       {videos.map(video =><Link to={"/watch?v="+video.id} key={video.id} ><Videocard info={video}/></Link>)}
     </div>
   )

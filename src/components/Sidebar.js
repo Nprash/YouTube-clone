@@ -36,22 +36,56 @@ const isLocation = useLocation();
 //if above if condition true(no sidebar menu) then it return small icons menu or else it return below sidebar
 // this toggle function enabled at head.js hamburger menu icon with help of redux store
   return (
-    <div className={`w-52 h-screen fixed  overflow-x-hidden overflow-y-hidden hover:overflow-y-scroll z-10  p-2 pt-0 mt-14 ${isLocation.pathname.includes('/watch')?"fixed top-0 left-0 h-screen z-[500] bg-red-400 transition-transform transform translate-x-0  ":""}`}>
+    <div className={` hidden md:w-52 sm:w-40 h-screen fixed  md:block overflow-x-hidden overflow-y-hidden hover:overflow-y-scroll z-10 p-2 pt-0 mt-14 ${isLocation.pathname.includes('/watch')?"fixed top-0 left-0 h-screen z-[500] bg-gray-100 transition-transform transform translate-x-0  ":""}`}>
+      
+      
+      
       <div className="font-normal pb-5">
-        <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><GoHomeFill/></span><Link to='/'><h1 className="text-sm">Home</h1></Link></div>
-        <div className="flex items-center p-1 cursor-pointer hover:bg-gray-200 rounded-lg"><svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style={{pointerEvents: "none",paddingLeft:"6px" ,marginRight:"22px", display: "block", width: "28px", height: "28px"}}><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z"></path></svg> <h1 className="text-sm">Shorts</h1></div>
-        <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><MdOutlineSubscriptions /></span> <h1 className="text-sm">Subscriptions</h1></div>
+        <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+          <span className="text-xl mr-5 pl-2"><GoHomeFill/></span>
+          <Link to='/'><h1 className="text-sm">Home</h1></Link>
+        </div>
+        <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+          <svg height="28" viewBox="0 0 24 24" width="28" focusable="false" className="w-8 " ><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z"></path>
+          </svg>
+          <h1 className="text-sm ml-3">Shorts</h1>
+        </div>
+        <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+          <span className="text-xl mr-5 pl-2"><MdOutlineSubscriptions /></span> 
+          <h1 className="text-sm">Subscriptions</h1>
+        </div>
       </div>
+
+
+
       <div className="pb-5"><hr /></div>
       <div>
         <ul className="">
-          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><MdOutlineVideoLibrary /></span><li className="text-sm">Library</li></div>
-          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><GoHistory /></span><li className="text-sm">History</li></div>
-          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><GoVideo /></span><li className="text-sm">Your videos</li></div>
-          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><IoMdTime /></span> <li className="text-sm">Watch later</li></div>
-          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><BiLike /></span><li className="text-sm">Liked videos</li></div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+            <span className="text-xl mr-5 pl-2"><MdOutlineVideoLibrary /></span>
+            <li className="text-sm">Library</li>
+          </div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+            <span className="text-xl mr-5 pl-2"><GoHistory /></span>
+            <li className="text-sm">History</li>
+          </div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+            <span className="text-xl mr-5 pl-2"><GoVideo /></span>
+            <li className="text-sm">Your videos</li>
+          </div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+            <span className="text-xl mr-5 pl-2"><IoMdTime /></span>
+             <li className="text-sm">Watch later</li>
+          </div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg">
+            <span className="text-xl mr-5 pl-2"><BiLike /></span>
+            <li className="text-sm">Liked videos</li>
+          </div>
         </ul>
       </div>
+
+
+
       <div className="p-5"><hr /></div>
       <div>
         <h1 className="font-normal pl-5 text-base">Subscriptions</h1>
@@ -63,11 +97,11 @@ const isLocation = useLocation();
           <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><PiFireLight/></span><li className="text-sm">Trending</li></div>
           <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><HiOutlineShoppingBag/></span><li className="text-sm">Shoping</li></div>
           <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><PiMusicNoteLight /></span> <li className="text-sm">Music</li></div>
-          <div className="flex items-center p-2 py-1 cursor-pointer hover:bg-gray-200 rounded-lg"><svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style={{pointerEvents: "none",paddingLeft:"6px" ,marginRight:"22px", display: "block", width: "28px", height: "28px"}}><path d="m22.01 4.91-.5-2.96L1.64 5.19 2 8v13h20V8H3.06l18.95-3.09zM5 9l1 3h3L8 9h2l1 3h3l-1-3h2l1 3h3l-1-3h3v11H3V9h2z"></path></svg><li className="text-sm">Movies</li></div>
-          <div className="flex items-center p-2 py-1 cursor-pointer hover:bg-gray-200 rounded-lg"><svg enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style={{pointerEvents: "none",paddingLeft:"6px" ,marginRight:"22px", display: "block", width: "28px", height: "28px"}}><g><path d="M14 12c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM8.48 8.45l-.71-.7C6.68 8.83 6 10.34 6 12s.68 3.17 1.77 4.25l.71-.71C7.57 14.64 7 13.39 7 12s.57-2.64 1.48-3.55zm7.75-.7-.71.71c.91.9 1.48 2.15 1.48 3.54s-.57 2.64-1.48 3.55l.71.71C17.32 15.17 18 13.66 18 12s-.68-3.17-1.77-4.25zM5.65 5.63l-.7-.71C3.13 6.73 2 9.24 2 12s1.13 5.27 2.95 7.08l.71-.71C4.02 16.74 3 14.49 3 12s1.02-4.74 2.65-6.37zm13.4-.71-.71.71C19.98 7.26 21 9.51 21 12s-1.02 4.74-2.65 6.37l.71.71C20.87 17.27 22 14.76 22 12s-1.13-5.27-2.95-7.08z"></path></g></svg><li className="text-sm">Live</li></div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg" ><svg height="28" viewBox="0 0 24 24" width="28" focusable="false"  className="w-8 "><path d="m22.01 4.91-.5-2.96L1.64 5.19 2 8v13h20V8H3.06l18.95-3.09zM5 9l1 3h3L8 9h2l1 3h3l-1-3h2l1 3h3l-1-3h3v11H3V9h2z"></path></svg><li className="text-sm ml-4">Movies</li></div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><svg enableBackground="new 0 0 24 24" height="28" viewBox="0 0 24 24" width="28" focusable="false" className="w-8"><g><path d="M14 12c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM8.48 8.45l-.71-.7C6.68 8.83 6 10.34 6 12s.68 3.17 1.77 4.25l.71-.71C7.57 14.64 7 13.39 7 12s.57-2.64 1.48-3.55zm7.75-.7-.71.71c.91.9 1.48 2.15 1.48 3.54s-.57 2.64-1.48 3.55l.71.71C17.32 15.17 18 13.66 18 12s-.68-3.17-1.77-4.25zM5.65 5.63l-.7-.71C3.13 6.73 2 9.24 2 12s1.13 5.27 2.95 7.08l.71-.71C4.02 16.74 3 14.49 3 12s1.02-4.74 2.65-6.37zm13.4-.71-.71.71C19.98 7.26 21 9.51 21 12s-1.02 4.74-2.65 6.37l.71.71C20.87 17.27 22 14.76 22 12s-1.13-5.27-2.95-7.08z"></path></g></svg><li className="text-sm ml-4">Live</li></div>
           <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><SiYoutubegaming/></span><li className="text-sm">Gaming</li></div>
-          <div className="flex items-center p-2 py-1 cursor-pointer hover:bg-gray-200 rounded-lg"><svg enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style={{pointerEvents: "none",paddingLeft:"6px" ,marginRight:"22px", display: "block", width: "28px", height: "28px"}}><path d="M11 11v6H7v-6h4m1-1H6v8h6v-8zM3 3.03V21h14l4-4V3.03M20 4v11.99l-.01.01H16v3.99l-.01.01H4V4h16zm-2 4H6V6h12v2zm0 7h-5v-2h5v2zm0-3h-5v-2h5v2z"></path></svg><li className="text-sm">News</li></div>
-          <div className="flex items-center p-2 py-1 cursor-pointer hover:bg-gray-200 rounded-lg"><svg height="24" viewBox="0 0 24 24" width="24" focusable="false" style={{pointerEvents: "none",paddingLeft:"4px" ,marginRight:"24px", display: "block", width: "28px", height: "28px"}}><path d="M18 5V2H6v3H3v6l3.23 1.61c.7 2.5 2.97 4.34 5.69 4.38L8 19v3h8v-3l-3.92-2.01c2.72-.04 4.99-1.88 5.69-4.38L21 11V5h-3zM6 11.38l-2-1V6h2v5.38zM15 21H9v-1.39l3-1.54 3 1.54V21zm2-10c0 2.76-2.24 5-5 5s-5-2.24-5-5V3h10v8zm3-.62-2 1V6h2v4.38z"></path></svg><li className="text-sm">Sports</li></div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><svg enableBackground="new 0 0 24 24" height="28" viewBox="0 0 24 24" width="28" focusable="false" className="w-8"><path d="M11 11v6H7v-6h4m1-1H6v8h6v-8zM3 3.03V21h14l4-4V3.03M20 4v11.99l-.01.01H16v3.99l-.01.01H4V4h16zm-2 4H6V6h12v2zm0 7h-5v-2h5v2zm0-3h-5v-2h5v2z"></path></svg><li className="text-sm ml-4">News</li></div>
+          <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><svg height="28" viewBox="0 0 24 24" width="28" focusable="false" className="w-8"><path d="M18 5V2H6v3H3v6l3.23 1.61c.7 2.5 2.97 4.34 5.69 4.38L8 19v3h8v-3l-3.92-2.01c2.72-.04 4.99-1.88 5.69-4.38L21 11V5h-3zM6 11.38l-2-1V6h2v5.38zM15 21H9v-1.39l3-1.54 3 1.54V21zm2-10c0 2.76-2.24 5-5 5s-5-2.24-5-5V3h10v8zm3-.62-2 1V6h2v4.38z"></path></svg><li className="text-sm ml-4">Sports</li></div>
           <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><BsLightbulb/></span><li className="text-sm">Learning</li></div>
           <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><TbHanger2/></span><li className="text-sm">Fashion & Beauty</li></div>
           <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><MdPodcasts/></span><li className="text-sm">Podcasts</li></div>
@@ -133,6 +167,7 @@ const isLocation = useLocation();
         <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><TfiHelpAlt /></span><h1 className="text-sm">Help</h1></div>
         <div className="flex items-center p-2 cursor-pointer hover:bg-gray-200 rounded-lg"><span className="text-xl mr-5 pl-2"><MdOutlineFeedback /></span><h1 className="text-sm">Send feedback</h1></div>
       </div>
+
       <div className="p-5"><hr /></div>
       <div className="pl-5 pr-3 font-normal break-words h-fit mb-4">
         <p className="text-[11px] pb-2 h-fit">About Press Copyright Contact us Creators Advertise Developers</p>

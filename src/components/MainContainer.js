@@ -1,18 +1,18 @@
 import React from 'react'
 import ButtonList from './ButtonList';
 import VideoContainer from './VideoContainer';
-import {useSelector } from "react-redux";
+// import {useSelector } from "react-redux";
 
 
 const MainContainer = () => {
-const isMenuOpen = useSelector((store) => store.app.isMenuOpen );
+// const isMenuOpen = useSelector((store) => store.app.isMenuOpen );
 
   return (
-    <div className={`w-full mt-12 box-border`}>
-      <div className={`w-full box-border  bg-gray-50 fixed z-1`}>
+    <div className={` absolute mt-12 box-border`}>
+      <div className={` box-border max-w-screen-2xl bg-gray-50 fixed z-1`}>
         <ButtonList />
       </div>
-      <div className={` absolute w-full sm:w-fit mx-auto mt-14 box-border -z-10`}>
+      <div className={` sm:w-fit mx-auto mt-14 box-border -z-10`}>
         <VideoContainer/>
       </div>
     </div>
