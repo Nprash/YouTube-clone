@@ -5,7 +5,8 @@ const MYAPI_KEY = "AIzaSyBvUw8Cwfn4A1pFA-fZn28gZLxCIkLd7do"
 export const Youtube_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+MYAPI_KEY;
 
- export const Youtube_Suggestion_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
+ export const Youtube_Suggestion_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
+  // "https://clients1.google.com/complete/search?client=firefox&ds=yt&q=iphone"
 // Authorization: Bearer [YOUR_ACCESS_TOKEN]
 // Accept: application/json
 // export const Youtube_Suggestion_API="https://suggestqueries-clients6.youtube.com/complete/search?client=youtube&hl=en&gl=in&gs_rn=64&gs_ri=youtube&ds=yt&cp=5&gs_id=k&q={searchquery}&xhr=t&xssi=t"
