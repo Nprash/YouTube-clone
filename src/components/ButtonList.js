@@ -1,40 +1,39 @@
-import React , {useState, useRef} from 'react';
-import {LiaAngleLeftSolid, LiaAngleRightSolid} from "react-icons/lia"
+import React ,  {useRef } from 'react';
+// import {LiaAngleLeftSolid, LiaAngleRightSolid} from "react-icons/lia"
 import Button from '../components/Button';
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ButtonList = () => {
   const list = ["All","Computers","Gaming","Computer Applications","Wuxia","Manga","Music","Arjitsingh","Jubin natiala","Sonu Nigam","Shreya Ghosal","Live","News","Filmi","Movies","Scientific","Adventures","Horror","Drama","Comedy","Thrilling","Mantras","Flute","Movie Musicals","Healing Prayers","Science",]
   const containerRef = useRef(null);
-  const [position, setPosition] = useState(0);
 
-  const moveLeft = ()=>{
-    setPosition(prevPosition => (prevPosition - 1));
-    console.log("left btn clicked")
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 8,
+    slidesToScroll: 3
   };
-
-  const moveRight = () => {
-    setPosition(prevPosition => (prevPosition  + 1));
-    console.log("right btn clicked")
-  };
+  const buttonChiphandler = () => {
+    console.log(containerRef)
+  }
 
   return (
-    <div className='box-border flex justify-center items-center my-2 max-w-[1500px]'>
-      
-      <div className=' relative flex mx-4 overflow-hidden' ref={containerRef} >
+    <div className='w-full overflow-hidden m-auto p-2'>
+      <div className='mx-4  flex justify-center items-center'>
+      <Slider {...settings}>
         {
-          list.map((btnlist, index)=>{
-            return (
-              <Button key={index} name={btnlist} active={index===position}/>
-              )
-            })
-          }
+          list.map((btnlist, index)=>(
+            
+            <Button key={index} onClick={buttonChiphandler} name={btnlist} ref={containerRef}/>
+            
+          ))
+        }
+        </Slider>
       </div>
-
-      <div className='w-full absolute flex justify-between z-30'>
-        <button onClick={moveLeft} className='  hover:bg-gray-200 rounded-full p-2 '><LiaAngleLeftSolid /></button>
-        <button onClick={moveRight} className=' hover:bg-gray-200 rounded-full p-2 mr-4'><LiaAngleRightSolid /></button>
-      </div>
+        
     </div>
   )
 }

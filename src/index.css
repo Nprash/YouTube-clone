@@ -37,20 +37,28 @@ code {
   background: #555; /* You can use your desired color */
 }
 
+.slick-slider{
+  width: 100%;
+  height: fit-content;
+  position: relative;
 
-.slide {
-  width: 100%; /* Adjust the width of each slide */
-  height: 200px; /* Adjust the height of each slide */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f0f0; /* Background color for non-active slides */
-  border: 1px solid #ccc; /* Border for each slide */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-.slide.active {
-  background-color: #3498db; /* Background color for the active slide */
-  color: #fff; /* Text color for the active slide */
-  border-color: #2980b9; /* Border color for the active slide */
+.slick-slide{
+  width: fit-content;
+}
+
+
+.slick-arrow{
+  background-color: black;
+}
+
+.slick-prev{
+  font-size: large;
+  background-color:orange;
+  color:red;
+}
+.slick-next{
+  font-size: medium;
+  color: red;
 }
