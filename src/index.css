@@ -49,14 +49,14 @@ code {
 }
 
 
-.slick-arrow{
+button .slick-arrow{
   background-color: black;
+  width: 28px;
+  height: 28px;
 }
 
 .slick-prev{
-  font-size: large;
-  background-color:orange;
-  color:red;
+  width: 30px;
 }
 .slick-next{
   font-size: medium;

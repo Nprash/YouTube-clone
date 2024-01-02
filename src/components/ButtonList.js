@@ -14,7 +14,7 @@ const ButtonList = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 8,
-    slidesToScroll: 3
+    slidesToScroll: 2
   };
   const buttonChiphandler = () => {
     console.log(containerRef)

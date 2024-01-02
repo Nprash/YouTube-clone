@@ -1,4 +1,4 @@
-const MYAPI_KEY = "AIzaSyBvUw8Cwfn4A1pFA-fZn28gZLxCIkLd7do"
+const MYAPI_KEY = process.env.REACT_APP_MYAPI_KEY
 
 // "AIzaSyAsw0gWLN3QEGKQ6TyBpfwIjvt0PeRTMWU";
 
