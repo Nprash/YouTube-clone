@@ -27,7 +27,7 @@ const ButtonList = () => {
         {
           list.map((btnlist, index)=>(
             
-            <Button key={index} onClick={buttonChiphandler} name={btnlist} ref={containerRef}/>
+            <Button key={index} onClick={buttonChiphandler} name={btnlist} />
             
           ))
         }

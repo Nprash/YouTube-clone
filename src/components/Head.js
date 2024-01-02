@@ -57,7 +57,7 @@ const Head = () => {
         const json = await data.json();
         // console.log(json[1])
         setCatchsuggestions(json[1]);
-        console.log("API call with searcy query ->" + searchQuery)
+        console.log("API call with search query ->" + searchQuery)
     //above console refers that how many API calls are happening accroding to search query
         // this function called inside the timer in useeffect ot make an API call with the search query
         dispatch(cacheResults({
