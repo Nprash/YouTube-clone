@@ -3,10 +3,8 @@ import { Youtube_API } from '../utilis/Constants';
 
 
 const useVideosList = () => {
-const [fixedvideos, setFixedvideos] = useState();
+// const [fixedvideos, setFixedvideos] = useState();
 const [videos, setVideos] = useState([]);
-
-
 
 useEffect(()=>{
     getVideos();
@@ -16,16 +14,18 @@ useEffect(()=>{
     const data = await fetch(Youtube_API);
     const json = await data.json(); 
     setVideos(json.items);
-    setFixedvideos(json.items);
+    // console.log(videos)
+    // setFixedvideos(json.items);
   }
-  const  discoverVideos =(input, list)=>{
+  // const  discoverVideos =(input, list)=>{
   
-    let filteredvideos = list.filter((vdo)=>{
-      return vdo.title.toLowercase().include(input.toLowercase())
-    })
-    setVideos(filteredvideos)
-  }
-    return videos;
+  //   let filteredvideos = list.filter((vdo)=>{
+  //     return vdo.title.toLowercase().include(input.toLowercase())
+  //   })
+  //   setVideos(filteredvideos)
+  // }
+   
+  return videos;
 }
 
 // export default discoverVideos 
