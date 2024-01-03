@@ -2,8 +2,8 @@
 
 // "AIzaSyAsw0gWLN3QEGKQ6TyBpfwIjvt0PeRTMWU";
 
-export const Youtube_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+process.env.REACT_APP_MYAPI_KEY;
+export const Youtube_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+process.env.REACT_APP_MYAPI_KEY;
+// "https://youtube-v31.p.rapidapi.com"+process.env.REACT_APP_MYAPI_KEY
 
  export const Youtube_Suggestion_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
   // "https://clients1.google.com/complete/search?client=firefox&ds=yt&q=iphone"
