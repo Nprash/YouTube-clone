@@ -13,7 +13,7 @@ const ButtonList = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 8,
+    slidesToShow: 5,
     slidesToScroll: 2
   };
   const buttonChiphandler = () => {
