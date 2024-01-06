@@ -8,14 +8,52 @@ import "slick-carousel/slick/slick-theme.css";
 const ButtonList = () => {
   const list = ["All","Computers","Gaming","Computer Applications","Wuxia","Manga","Music","Arjitsingh","Jubin natiala","Sonu Nigam","Shreya Ghosal","Live","News","Filmi","Movies","Scientific","Adventures","Horror","Drama","Comedy","Thrilling","Mantras","Flute","Movie Musicals","Healing Prayers","Science",]
   const containerRef = useRef(null);
-
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 2
+    centerMode: true,
+    centerPadding: '0',
+    rtl: false,
+    responsive: [
+      {
+        breakpoint: 1919,  // Larger than or equal to XL
+        settings: {
+          slidesToShow: 12,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1439,  // Larger than or equal to LG
+        settings: {
+          slidesToShow: 9,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1279,  // Larger than or equal to MD
+        settings: {
+          slidesToShow: 8,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 767,  // Larger than or equal to SM
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 479,  // Too small screens
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+    ],
   };
+  
   const buttonChiphandler = () => {
     console.log(containerRef)
   }

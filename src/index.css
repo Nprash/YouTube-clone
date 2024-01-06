@@ -49,16 +49,18 @@ code {
 }
 
 
-button .slick-arrow{
-  background-color: black;
-  width: 28px;
-  height: 28px;
+
+/* Add these styles to your CSS */
+.slick-prev::before, .slick-next::before {
+  content: ""; /* Override default content property */
+  font-size: 24px !important; /* Adjust the font size as needed */
+  color: #000 !important; /* Change the color as needed */
 }
 
-.slick-prev{
-  width: 30px;
+.slick-prev::before {
+  content: "<"; /* Use your own custom content for the left arrow */
 }
-.slick-next{
-  font-size: medium;
-  color: red;
+
+.slick-next::before {
+  content: ">"; /* Use your own custom content for the right arrow */
 }
